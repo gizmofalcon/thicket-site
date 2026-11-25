@@ -49,12 +49,18 @@ a:hover { text-decoration-thickness: 2px; }
 .top nav a { text-decoration: none; color: var(--soft); }
 .top nav a:hover, .top nav a[aria-current] { color: var(--ink); }
 
-/* Until the App Store link exists this says so, plainly. */
-.soon {
+/* Apple's badge exactly as Apple draws it: 48 px tall (40 px is the least allowed), with a quarter of
+   its height clear all round, which the hero's spacing gives it. Apple asks for one badge per page,
+   so the closing card has a plain pill instead. */
+.store { display: block; width: fit-content; border-radius: 8px; }
+.store img { width: auto; height: 48px; }
+.get {
   display: inline-flex; align-items: center; height: 48px; padding: 0 22px;
   border-radius: 24px; background: var(--ink); color: #fff;
   font: 600 16px/1 var(--sans); white-space: nowrap; text-decoration: none;
+  transition: background-color 0.14s var(--out);
 }
+.get:hover { background: var(--bark); }
 
 /* Stickers: cut by Thicket's own cutter from public-domain photos. A hard, unblurred shadow gives
    them the thickness of a printed sticker without a fade. */
@@ -163,6 +169,7 @@ a:hover { text-decoration-thickness: 2px; }
 .foot nav { display: flex; gap: 20px; font-weight: 600; color: var(--ink); }
 .foot nav a { text-decoration: none; }
 .foot p { margin: 0 0 8px; max-width: 60ch; }
+.foot .legal { margin-top: 16px; font-size: 13px; max-width: 72ch; }
 
 /* Privacy and support */
 .doc {
